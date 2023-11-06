@@ -12,6 +12,6 @@ export class ChatServiceService {
   {}
   registerUser(user:User)
   {
-    return this._htppClient.post('${environment.apiUrl}api/chat/register-user',user,{responseType:'text'});
+    return this._htppClient.post(`${environment.apiUrl}api/chat/register-user`,user,{responseType:'text'});
   }
 }
