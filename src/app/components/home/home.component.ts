@@ -11,7 +11,7 @@ export class HomeComponent {
   userForm: FormGroup = new FormGroup({});
   apiErrorMessages: string[] = [];
   submitted = false;
-  constructor(private formBuilder: FormBuilder, private _chatService = ChatServiceService) { }
+  constructor(private formBuilder: FormBuilder, private _chatService: ChatServiceService) { }
   ngOnInit(): void {
     this.initialzForm();
   }
