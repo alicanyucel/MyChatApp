@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@microsoft/signalr';
+import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.prod';
 import { User } from '../models/user';
 
@@ -12,6 +12,6 @@ export class ChatServiceService {
   {}
   registerUser(user:User)
   {
-    return this._htppClient.post(`${environment.apiUrl}api/chat/register-user`,user,{responseType:'text'});
-  }
+    return this._htppClient.post(`${environment.apiUrl}api/chat/register-user`,user, {responseType:'text'});
+  } 
 }

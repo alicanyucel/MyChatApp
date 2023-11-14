@@ -11,6 +11,7 @@ export class HomeComponent {
   userForm: FormGroup = new FormGroup({});
   apiErrorMessages: string[] = [];
   submitted = false;
+  
   constructor(private formBuilder: FormBuilder, private _chatService: ChatServiceService) { }
   ngOnInit(): void {
     this.initialzForm();
@@ -28,13 +29,13 @@ export class HomeComponent {
         next: () => {
           console.log("open chat");
         },
-        error:error=> {
+        error: error => {
           if (typeof (error.error) !== 'object') {
             this.apiErrorMessages.push(error.error);
           }
         }
-      }
-      );
+      })
     }
   }
 }
+
