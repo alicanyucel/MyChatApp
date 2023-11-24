@@ -1,1 +1,71 @@
-<p>chat works!</p>
+<div class="row">
+    <div class="col-lg-2">
+        <div class="d-grid">
+            <button class="btn btn-primary btn-block" type="button" (click)="backToHome()">
+                Back to Home
+            </button>
+        </div>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-lg-2">
+        <div class="card border-secondary mb-3">
+            <div class="card-header h3 text-center">Users</div>
+            <div class="card-body" style="min-height: 555px;">
+                <div class="row mt-1">
+                    <div class="col">
+                        <div class=" d-girid">
+                            <button type="button"
+                                class="btn btn-success card-text btn-block">{{chatService.myName}}</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col">
+                        <div class=" d-girid">
+                            <button type="button" class="btn btn-dark card-text btn-block">User 2</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="card border-secondary">
+                <div class="card-header h3 text-muted text-center">Messages</div>
+                <div class="card-body" style="min-height:500px;">
+                    <div style="overflow-y:auto;height:450px;">
+                        <p class="card-text">
+                            <span class="text-primary">User 1</span>
+                            <span class="ml-1">Some messages go here</span>
+                        </p>
+                        <p class="card-text">
+                            <span class="text-primary">User 2</span>
+                            <span class="ml-1">Some messages go here</span>
+                        </p>
+                        <p class="card-text">
+                            <span class="text-primary">User 3</span>
+                            <span class="ml-1">Some messages go here</span>
+                        </p>
+                        <p class="card-text">
+                            <span class="text-primary">User 4</span>
+                            <span class="ml-1">Some messages go here</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <form autocomplete="off">
+                        <div class="row">
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" placeholder="send messages">
+                            </div>
+                            <div class="col-3">
+                                <div class="d-girid">
+                                    <button class="btn btn-block btn-dark" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

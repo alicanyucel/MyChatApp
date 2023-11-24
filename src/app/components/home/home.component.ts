@@ -11,7 +11,7 @@ export class HomeComponent {
   userForm: FormGroup = new FormGroup({});
   apiErrorMessages: string[] = [];
   submitted = false;
-  
+  openChat =false;
   constructor(private formBuilder: FormBuilder, private _chatService: ChatServiceService) { }
   ngOnInit(): void {
     this.initialzForm();
@@ -27,7 +27,10 @@ export class HomeComponent {
     if (this.userForm.valid) {
       this._chatService.registerUser(this.userForm.value).subscribe({
         next: () => {
-          console.log("open chat");
+          this._chatService.myName=this.userForm.get('name')?.value;
+          this.openChat = true;
+          this.userForm.reset();
+          this.submitted=false;
         },
         error: error => {
           if (typeof (error.error) !== 'object') {
@@ -37,5 +40,9 @@ export class HomeComponent {
       })
     }
   }
-}
 
+  closeChat() {
+    this.openChat = false;
+  }
+
+}
